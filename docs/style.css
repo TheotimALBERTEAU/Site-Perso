@@ -156,9 +156,42 @@ nav ul li:last-child {
     align-items: center;
 }
 
-.description {
+/* ABOUT SECTION */
+.about {
     display: flex;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 10vw;
+}
+
+.about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 98%;
+}
+
+.about img {
+    width: 30%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.description {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--dark);
 }
 
 @media screen and (max-width: 1024px) {
@@ -223,8 +256,12 @@ nav ul li:last-child {
         display: flex;
     }
 
-    /* Suppression des séparateurs dans le menu mobile */
-    nav ul li + li::before {
-        display: none;
+    /* ABOUT responsive */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about img {
+        width: 50%;
     }
 }
