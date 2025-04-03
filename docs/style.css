@@ -19,6 +19,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--light);
+    margin-top: 70px; /* Ajustement pour éviter le chevauchement du header */
 }
 
 /* HEADER */
@@ -38,7 +39,6 @@ header {
 
 .container {
     width: 90%;
-    max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -50,14 +50,13 @@ header {
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
-    width: 50%;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 50%;
+    flex-grow: 1;
 }
 
 /* MENU DESKTOP */
@@ -82,6 +81,30 @@ nav ul li a {
     color: white;
     font-weight: bold;
     transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary);
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Ajout du séparateur SVG */
+nav ul li + li::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 15px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="15" viewBox="0 0 2 15"><rect width="2" height="15" fill="white"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 10px;
+}
+
+/* Ajout d'un espace après "Contact" */
+nav ul li:last-child {
+    margin-right: 20px;
 }
 
 /* BOUTONS CTA */
@@ -117,6 +140,13 @@ nav ul li a {
     font-size: 28px;
     cursor: pointer;
     display: none;
+}
+
+/* Sections avec scroll-margin-top pour éviter le chevauchement du header */
+.section {
+    scroll-margin-top: 80px;
+    padding: 50px 0;
+    text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
@@ -179,5 +209,10 @@ nav ul li a {
 
     #menu-toggle:checked + .menu-icon + nav .cta {
         display: flex;
+    }
+
+    /* Suppression des séparateurs dans le menu mobile */
+    nav ul li + li::before {
+        display: none;
     }
 }
