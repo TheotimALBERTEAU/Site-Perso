@@ -37,8 +37,8 @@ header {
     align-items: center;
 }
 
-.container {
-    width: 90%;
+header .container {
+    width: 95%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -147,6 +147,18 @@ nav ul li:last-child {
     scroll-margin-top: 80px;
     padding: 50px 0;
     text-align: center;
+}
+
+.section .container {
+    margin: 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 1024px) {
